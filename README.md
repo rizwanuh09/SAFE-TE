@@ -117,6 +117,4 @@ gdf = risk_score.add_risk_score(gdf)
 model.train_v85_model(gdf)
 ```
 
-## License
 
-Released under the MIT License. See [LICENSE](LICENSE).
