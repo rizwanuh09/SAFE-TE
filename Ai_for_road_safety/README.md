@@ -103,7 +103,7 @@ Or use the stages individually:
 import geopandas as gpd
 from src import config, osm_features, exposure, risk_score, model
 
-osm_features.build_osm_features()                 # writes links_with_counts.gpkg
+osm_features.build_osm_features()                
 
 gdf = gpd.read_file(config.OUT_GPKG)
 gdf = gdf[gdf["SampleSize_avg"] > 0].copy()
@@ -112,7 +112,7 @@ gdf = exposure.standardize_density(gdf)
 gdf = exposure.add_vru_exposure(gdf)
 gdf = exposure.add_safe_context_speed(gdf)
 gdf = exposure.add_traffic_exposure(gdf)
-gdf = risk_score.add_risk_score(gdf)              # adds Stand_Risk_Score
+gdf = risk_score.add_risk_score(gdf)              
 
 model.train_v85_model(gdf)
 ```
