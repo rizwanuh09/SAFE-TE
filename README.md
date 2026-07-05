@@ -57,11 +57,9 @@ osm-road-safety-scoring/
 │   ├── exposure.py          # stage 2: densities, standardization, safe speed
 │   ├── risk_score.py        # stage 2: entropy weights + composite score
 │   └── model.py             # stage 3: V85 gradient boosting model
-├── notebooks/
-│   └── Data_from_OSM.ipynb  # original exploratory notebook
+
 ├── data/                    # input data (not committed - see below)
-├── LICENSE
-└── .gitignore
+
 ```
 
 ## Data
