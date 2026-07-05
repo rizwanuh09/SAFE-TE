@@ -1,0 +1,5 @@
+geopandas>=0.13
+shapely>=2.0
+pandas
+numpy
+scikit-learn
