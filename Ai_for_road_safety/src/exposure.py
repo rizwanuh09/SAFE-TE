@@ -57,7 +57,8 @@ def add_safe_context_speed(gdf):
     gdf.loc[res_condition, "Safe_Context_Speed"] = (gdf.loc[res_condition, "Safe_Context_Speed"].clip(upper=config.RESIDENTIAL_CAP))
 
     gdf["School_Zone_Flag"] = sch_present
-    gdf["Limit_Verified"] = gdf["SpeedLimit"].isin(config.VERIFIED_LIMITS)
+    gdf["SpeedLimit"] = pd.to_numeric(gdf["SpeedLimit"],errors="coerce").fillna(55)
+    gdf["Limit_Verified"] = gdf["SpeedLimit"] % 10 == 0
     gdf["Recommended_Limit"] = gdf["Safe_Context_Speed"].astype(int)
 
     gdf["Risk_gap"] = gdf["F85thPercentileSpeed"] - gdf["Safe_Context_Speed"]
